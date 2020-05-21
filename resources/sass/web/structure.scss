@@ -1,0 +1,30 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+header {
+    .menu {
+        background: #fff;
+
+        &.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            box-shadow: 0 1px 10px #ccc;
+        }
+    }
+}
+
+section.main {
+    padding: 30px 0;
+    flex: 1;
+
+    &.sticky {
+        padding-top: 127px;
+    }
+}
