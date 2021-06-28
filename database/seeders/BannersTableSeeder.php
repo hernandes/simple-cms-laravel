@@ -1,4 +1,7 @@
 <?php
+namespace Database\Seeders;
+
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 use App\Models\Banner;
 
@@ -7,7 +10,7 @@ class BannersTableSeeder extends Seeder
 
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
 
         $banners = [
             [

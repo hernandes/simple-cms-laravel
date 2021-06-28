@@ -8,6 +8,9 @@
 
         <title>{{ env('APP_NAME') }} | @lang('admin.title')</title>
 
+        <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
+
         <link rel="stylesheet" href="{{ asset('/vendor/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('/vendor/adminlte/plugins/datatables/dataTables.bootstrap4.css') }}">
         <link rel="stylesheet" href="{{ asset('/vendor/adminlte/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css') }}">
@@ -94,7 +97,7 @@
             </div>
 
             <footer class="main-footer">
-                <strong>Copyright &copy; {{ date('Y') }} <a href="http://medialine.com.br">Medialine</a>.</strong> @lang('admin.footer.licensed_to') {{ env('APP_NAME') }}
+                <strong>Copyright &copy; {{ date('Y') }} <a href="{{ config('app.author_url') }}">{{ config('app.author') }}</a>.</strong> @lang('admin.footer.licensed_to') {{ env('APP_NAME') }}
             </footer>
         </div>
 

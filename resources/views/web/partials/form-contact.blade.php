@@ -8,28 +8,28 @@
     {!! Recaptcha::field('contact') !!}
 
     <div class="form-group">
-        <label for="name">@lang('web.pages.contact.fields.name')</label>
+        <label for="name">@lang('web.pages.contact.fields.name') <span class="required">*</span></label>
         <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" name="name" />
 
         <div class="invalid-feedback">{{ $errors->first('name') }}</div>
     </div>
 
     <div class="form-group">
-        <label for="email">@lang('web.pages.contact.fields.email')</label>
+        <label for="email">@lang('web.pages.contact.fields.email') <span class="required">*</span></label>
         <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" name="email" />
 
         <div class="invalid-feedback">{{ $errors->first('email') }}</div>
     </div>
 
     <div class="form-group">
-        <label for="phone">@lang('web.pages.contact.fields.phone')</label>
+        <label for="phone">@lang('web.pages.contact.fields.phone') <span class="required">*</span></label>
         <input data-mask-phone class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" value="{{ old('phone') }}" name="phone" />
 
         <div class="invalid-feedback">{{ $errors->first('phone') }}</div>
     </div>
 
     <div class="form-group">
-        <label for="message">@lang('web.pages.contact.fields.message')</label>
+        <label for="message">@lang('web.pages.contact.fields.message') <span class="required">*</span></label>
         <textarea class="form-control{{ $errors->has('message') ? ' is-invalid' : '' }}" name="message">{{ old('message') }}</textarea>
 
         <div class="invalid-feedback">{{ $errors->first('message') }}</div>

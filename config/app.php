@@ -13,6 +13,9 @@ return [
     |
     */
 
+    'author' => env('APP_AUTHOR', 'CMS'),
+    'author_url' => env('APP_AUTHOR_URL', 'https://cms.test'),
+
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
@@ -103,7 +106,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This locale will be used by the Faker PHP library when generating fake
-    | data for your database seeds. For example, this will be used to get
+    | data for your database seeders. For example, this will be used to get
     | localized telephone numbers, street address information and more.
     |
     */

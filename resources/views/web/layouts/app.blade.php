@@ -4,7 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         {!! SEO::generate(true) !!}
-        <meta name="author" content="Medialine">
+        <meta name="author" content="{{ config('app.author') }}">
+
+        <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -71,7 +74,7 @@
 
             <footer>
                 <div class="copyright text-center">
-                    Site por <a target="_blank" href="http://medialine.com.br">Medialine</a>
+                    Desenvolvido por <a target="_blank" href="{{ config('app.author_url') }}">{{ config('app.author') }}</a>
                 </div>
             </footer>
         </div>

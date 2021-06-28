@@ -6,6 +6,9 @@
         <title>{{ env('APP_NAME') }} | @lang('admin.title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
+
         <link rel="stylesheet" href="{{ asset('/vendor/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('/vendor/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('/vendor/adminlte/dist/css/adminlte.min.css') }}">
@@ -16,7 +19,7 @@
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo">
-                <a href="http://medialine.com.br"><b>Medialine</b></a>
+                <a href="{{ config('app.author_url') }}"><b>{{ config('app.author') }}</b></a>
             </div>
 
             <div class="card">
