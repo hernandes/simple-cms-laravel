@@ -1,8 +1,8 @@
 <?php
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Blade;
 
 class BladeServiceProvider extends ServiceProvider
 {

@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Request;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 

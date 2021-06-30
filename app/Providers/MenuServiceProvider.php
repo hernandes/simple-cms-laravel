@@ -2,8 +2,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Menu;
 use App\Models\Menu as Model;
+use Menu;
 
 class MenuServiceProvider extends ServiceProvider
 {
