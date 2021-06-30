@@ -17,6 +17,24 @@ return [
             'messages' => [
                 'failed' => 'Usuário e/ou senha estão incorretos'
             ]
+        ],
+
+        'register' => [
+            'title' => 'Novo cadastro',
+
+            'fields' => [
+                'email' => 'E-mail'
+            ]
+        ],
+
+        'password' => [
+            'title' => 'Recuperar minha senha',
+
+            'fields' => [
+                'email' => 'E-mail'
+            ],
+
+            'send_mail' => 'Enviar'
         ]
     ],
 
@@ -27,7 +45,8 @@ return [
     ],
 
     'actions' => [
-        'back' => 'Voltar'
+        'back' => 'Voltar',
+        'continue' => 'Continue'
     ],
 
     'banner' => [

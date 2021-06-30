@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-container">
             <div class="page-title">
-                <h1>Title</h1>
+                <h1>@lang('web.auth.password.title')</h1>
             </div>
 
             @if (session('status'))
@@ -14,13 +14,11 @@
             @endif
 
             <div class="forgot-password">
-                <h4>@lang('web.auth.password.title')</h4>
-
                 <form method="POST" action="{{ route('web.password.email') }}">
                     @csrf
 
                     <div class="form-group">
-                        <label for="email">@lang('web.auth.password.fields.email')</label>
+                        <label for="email">@lang('web.auth.password.fields.email') <span class="required">*</span></label>
 
                         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 

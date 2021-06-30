@@ -34,7 +34,7 @@ return [
                 'email' => 'E-mail'
             ],
 
-            'send_email' => 'Send Password Reset Link'
+            'send_mail' => 'Send Password Reset Link'
         ]
     ],
 

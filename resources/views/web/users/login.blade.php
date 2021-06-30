@@ -16,7 +16,7 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="email">@lang('web.auth.login.fields.email')</label>
+                                <label for="email">@lang('web.auth.login.fields.email') <span class="required">*</span></label>
 
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
@@ -28,7 +28,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="password">@lang('web.auth.login.fields.password')</label>
+                                <label for="password">@lang('web.auth.login.fields.password') <span class="required">*</span></label>
 
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
@@ -60,7 +60,7 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="register-email">@lang('web.auth.register.fields.email')</label>
+                                <label for="register-email">@lang('web.auth.register.fields.email') <span class="required">*</span></label>
 
                                 <input id="register-email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
