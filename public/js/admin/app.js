@@ -165,7 +165,6 @@ function imageUpload(ctx) {
 
         $upload.show();
         $preview.hide().find('img').attr('src', '');
-        console.log($post.val());
         $post.val('');
 
         e.preventDefault();

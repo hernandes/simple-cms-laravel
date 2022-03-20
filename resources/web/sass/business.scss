@@ -1,0 +1,37 @@
+.businesses-container {
+    background: #eaeaea;
+    padding: 2rem 0;
+}
+
+.businesses {
+    display: flex;
+    gap: .8rem;
+
+    .business {
+        flex: 1;
+        border-radius: 5px;
+        padding: 10px;
+        display: flex;
+        border: 1px solid #eaeaea;
+        background: #fff;
+
+        &__image {
+            margin-right: 10px;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+        }
+
+        &__title {
+            font-size: 1.4rem;
+        }
+
+        &__more {
+            text-align: right;
+        }
+    }
+}

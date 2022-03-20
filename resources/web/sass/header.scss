@@ -1,0 +1,26 @@
+header {
+    box-shadow: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 10%);
+
+    .navbar {
+        padding: .5rem 0!important;
+    }
+
+    .navbar-nav {
+        .nav-link {
+            padding-right: 1rem !important;
+            padding-left: 1rem !important;
+            font-weight: 500;
+            color: #333;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .contacts {
+        background-color: #ebebeb;
+        padding: .8rem 0;
+        color: #888;
+    }
+}

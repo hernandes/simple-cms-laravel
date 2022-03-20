@@ -43,7 +43,9 @@ class TestimonialsController extends Controller
         ]);
 
         try {
-            Testimonial::create(request()->all());
+            Testimonial::create(request()->only([
+                'name', 'active', 'body', 'image', 'company'
+            ]));
 
             success(trans('admin.modules.' . $this->willcard . '.messages.success_create'));
 
@@ -75,7 +77,9 @@ class TestimonialsController extends Controller
         ]);
 
         try {
-            $testimonial->update(request()->all());
+            $testimonial->update(request()->only([
+                'name', 'active', 'body', 'image', 'company'
+            ]));
 
             success(trans('admin.modules.' . $this->willcard . '.messages.success_update'));
 

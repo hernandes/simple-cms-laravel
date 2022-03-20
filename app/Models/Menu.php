@@ -3,25 +3,20 @@ namespace App\Models;
 
 use App\Support\Activated;
 use App\Support\Filterable;
-use Astrotomic\Translatable\Translatable;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Route;
 use Kalnoy\Nestedset\NodeTrait;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Menu extends Model implements TranslatableContract
+class Menu extends Model
 {
-    use Translatable, Filterable, LogsActivity, NodeTrait, Activated;
-
-    public $translatedAttributes  = [
-        'title', 'url'
-    ];
+    use Filterable,
+        LogsActivity,
+        NodeTrait,
+        Activated;
 
     protected static $logAttributes = ['*'];
 
-    protected $fillable = [
-        'title', 'active', 'post_id', 'page_id', 'parent_id', 'url'
-    ];
+    protected $guarded = ['id'];
 
     public function page()
     {
@@ -73,18 +68,11 @@ class Menu extends Model implements TranslatableContract
             return $url;
         }
 
-        $prefix = '';
-
-        $segments = request()->segments();
-        if (isset($segments[0]) && array_key_exists($segments[0], config('translatable.locales'))) {
-            $prefix = '/' . $segments[0];
-        }
-
         if (substr($url, 0, 1) !== '/') {
             $url = '/' . $url;
         }
 
-        return $prefix . $url;
+        return $url;
     }
 
     public static function routes()

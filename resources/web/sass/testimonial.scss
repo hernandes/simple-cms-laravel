@@ -1,0 +1,31 @@
+.testimonials {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .testimonial {
+        text-align: center;
+
+        &__image {
+            img {
+                max-width: 50%;
+                border-radius: 50%;
+            }
+        }
+
+        &__name {
+            margin: 1rem 0;
+            color: $secondary-color;
+            font-size: 1.6rem;
+        }
+
+        svg {
+            margin-top: 1rem;
+            height: 20px;
+
+            path {
+                fill: $secondary-color;
+            }
+        }
+    }
+}

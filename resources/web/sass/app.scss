@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-@import 'resources/web/sass/variables';
-@import 'resources/web/sass/structure';
-@import 'resources/web/sass/banner';
-@import 'resources/web/sass/hamburguer';
-@import 'resources/web/sass/responsive';
-@import 'resources/web/sass/auth';
-@import 'resources/web/sass/modal';
+@import 'variables';
+@import 'structure';
+@import 'header';
+@import 'footer';
+@import 'banner';
+@import 'hamburguer';
+@import 'responsive';
+@import 'auth';
+@import 'modal';
+@import 'testimonial';
+@import 'business';
+@import 'info';
+@import 'posts';
+@import 'util';

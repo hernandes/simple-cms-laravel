@@ -7,6 +7,7 @@ use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\Web\PasswordController;
 use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\SitemapController;
+use App\Http\Controllers\Web\PostsController;
 
 use App\Models\Menu;
 use App\Models\Page;
@@ -24,6 +25,9 @@ Route::post(trans('routes.forgot-password-reset'), [PasswordController::class, '
 
 Route::get(trans('routes.contact'), [ContactController::class, 'index'])->name('contact');
 Route::post(trans('routes.contact'), [ContactController::class, 'send'])->name('contact.send');
+
+Route::get('noticias', [PostsController::class, 'index'])->name('posts');
+Route::get('noticia/{slug}', [PostsController::class, 'show'])->name('posts.show');
 
 Route::get('sitemap.xml', [SitemapController::class, 'xml']);
 Route::get('sitemap', [SitemapController::class, 'index']);

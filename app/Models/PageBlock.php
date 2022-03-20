@@ -6,16 +6,10 @@ use App\Support\Filterable;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
-use Astrotomic\Translatable\Translatable;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
-class PageBlock extends Model implements Sortable, TranslatableContract
+class PageBlock extends Model implements Sortable
 {
-    use Translatable, Filterable, LogsActivity, SortableTrait, FileUpload;
-
-    public $translatedAttributes = [
-        'title', 'subtitle', 'body'
-    ];
+    use Filterable, LogsActivity, SortableTrait, FileUpload;
 
     protected static $logAttributes = ['*'];
 

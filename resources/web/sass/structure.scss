@@ -21,10 +21,21 @@ header {
 }
 
 section.main {
-    padding: 30px 0;
     flex: 1;
 
     &.sticky {
-        padding-top: 127px;
+        padding-top: 61px;
     }
+}
+
+.breadcrumb {
+    padding: .5rem 0;
+    background-color: transparent;
+    font-size: .8rem;
+}
+
+h2 {
+    color: $secondary-color;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }

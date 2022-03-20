@@ -6,16 +6,10 @@ use App\Support\Featured;
 use App\Support\FileUpload;
 use Kalnoy\Nestedset\NodeTrait;
 use Spatie\Activitylog\Traits\LogsActivity;
-use Astrotomic\Translatable\Translatable;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
-class ProductCategory extends Model implements TranslatableContract
+class ProductCategory extends Model
 {
-    use Translatable, LogsActivity, Activated, NodeTrait, FileUpload, Featured;
-
-    public $translatedAttributes = [
-        'name', 'slug', 'description'
-    ];
+    use LogsActivity, Activated, NodeTrait, FileUpload, Featured;
 
     protected static $logAttributes = ['*'];
 

@@ -31,21 +31,11 @@
 
         <div class="wrapper">
             <header>
-                <div class="top">
-                    <div class="container">
-                        @auth('web')
-                            {{ auth('web')->user()->name }} (<a href="{{ route('web.logout') }}">Sair</a>)
-                        @else
-                            <a href="{{ route('web.login') }}">Entrar</a>
-                        @endauth
-                    </div>
-                </div>
-
                 <div class="menu" id="header">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="{{ route('web.home') }}">
-                                <img src="{{ asset('images/logo.png') }}" width="100" />
+                                <img src="{{ asset('images/logo.webp') }}" width="100" />
                             </a>
 
                             <button class="navbar-toggler" type="button" data-toggle="slide-collapse" data-target="#navbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,6 +56,15 @@
                         </nav>
                     </div>
                 </div>
+
+                <div class="contacts">
+                    <div class="container">
+                        <a target="_blank" href="{{ whatsapp(config('settings.whatsapp', 'Olá como podemos lhe ajudar?')) }}">
+                            <i class="fa fa-whatsapp"></i>
+                            {{ config('settings.whatsapp') }}
+                        </a>
+                    </div>
+                </div>
             </header>
 
             <section class="main">
@@ -74,7 +73,7 @@
 
             <footer>
                 <div class="copyright text-center">
-                    Desenvolvido por <a target="_blank" href="{{ config('app.author_url') }}">{{ config('app.author') }}</a>
+                    Copyright PRD - Todos os direitos reservados.
                 </div>
             </footer>
         </div>

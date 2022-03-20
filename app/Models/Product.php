@@ -5,16 +5,10 @@ use App\Support\Activated;
 use App\Support\Featured;
 use Conner\Tagging\Taggable;
 use Spatie\Activitylog\Traits\LogsActivity;
-use Astrotomic\Translatable\Translatable;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
-class Product extends Model implements TranslatableContract
+class Product extends Model
 {
-    use Translatable, LogsActivity, Activated, Featured, Taggable;
-
-    public $translatedAttributes = [
-        'name', 'description', 'slug'
-    ];
+    use LogsActivity, Activated, Featured, Taggable;
 
     protected static $logAttributes = ['*'];
 

@@ -18,21 +18,9 @@ class CreateTestimonialsTable extends Migration
             $table->string('image')->nullable();
             $table->string('name');
             $table->string('company')->nullable();
+            $table->text('body');
             $table->boolean('active')->default(true);
             $table->timestamps();
-        });
-
-        Schema::create('testimonial_translations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('testimonial_id');
-            $table->text('body');
-            $table->string('locale', 20)->index();
-            $table->timestamps();
-
-            $table->unique(['testimonial_id', 'locale']);
-            $table->foreign('testimonial_id')
-                ->references('id')->on('testimonials')
-                ->onDelete('cascade');
         });
     }
 
@@ -43,7 +31,6 @@ class CreateTestimonialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('testimonial_translations');
         Schema::dropIfExists('testimonials');
     }
 }

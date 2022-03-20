@@ -39,10 +39,8 @@ class PagesController extends Controller
     {
         $data = request()->validate([
             'title' => 'required',
-            'active' => 'boolean',
             'body' => 'nullable|string',
-            'key' => 'required',
-            'featured' => 'boolean'
+            'key' => 'required'
         ]);
 
         $data += [
@@ -51,10 +49,11 @@ class PagesController extends Controller
         ];
 
         try {
-            DB::transaction(function () use ($data) {
+//            DB::transaction(function () use ($data) {
+//            dd($data);
                 $page = Page::create($data);
-                $page->updateOrCreateSeo(request('seo'));
-            });
+//                $page->updateOrCreateSeo(request('seo'));
+//            });
 
             success(trans('admin.modules.' . $this->willcard . '.messages.success_create'));
 

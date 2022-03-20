@@ -18,20 +18,9 @@ class CreateBannersTable extends Migration
             $table->string('image');
             $table->string('url')->nullable();
             $table->boolean('active');
+            $table->text('phrases')->nullable();
             $table->unsignedInteger('sequence')->default(0);
             $table->timestamps();
-        });
-
-        Schema::create('banner_translations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('banner_id');
-            $table->text('phrases')->nullable();
-            $table->string('locale', 20)->index();
-            $table->timestamps();
-
-            $table->foreign('banner_id')
-                ->references('id')->on('banners')
-                ->onDelete('cascade');
         });
     }
 
@@ -42,7 +31,6 @@ class CreateBannersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('banner_translations');
         Schema::dropIfExists('banners');
     }
 }

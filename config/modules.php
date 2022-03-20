@@ -52,8 +52,8 @@ return [
         ],
         'config' => [
             'with_categories' => true,
-            'with_comments' => true,
-            'with_tags' => true
+            'with_comments' => false,
+            'with_tags' => false
         ]
     ],
 
@@ -65,7 +65,7 @@ return [
     ],
 
     'partners' => [
-        'active' => true,
+        'active' => false,
         'controllers' => [
             'PartnersController'
         ]
@@ -79,14 +79,14 @@ return [
     ],
 
     'modals' => [
-        'active' => true,
+        'active' => false,
         'controllers' => [
             'ModalsController'
         ]
     ],
 
     'products' => [
-        'active' => true,
+        'active' => false,
         'controllers' => [
             'ProductsController',
             'ProductCategoriesController'
@@ -102,7 +102,7 @@ return [
     ],
 
     'faqs' => [
-        'active' => true,
+        'active' => false,
         'controllers' => [
             'FaqController'
         ]

@@ -5,18 +5,12 @@ use App\Support\FileUpload;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
-use Astrotomic\Translatable\Translatable;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
-class Media extends Model implements Sortable, TranslatableContract
+class Media extends Model implements Sortable
 {
-    use Translatable, LogsActivity, SortableTrait, FileUpload;
+    use LogsActivity, SortableTrait, FileUpload;
 
     protected $table = 'medias';
-
-    public $translatedAttributes = [
-        'title', 'alt', 'description'
-    ];
 
     protected static $logAttributes = ['*'];
 

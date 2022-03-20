@@ -3,27 +3,34 @@ namespace App\Models;
 
 use App\Support\Activated;
 use App\Support\Featured;
-use Astrotomic\Translatable\Translatable;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Route;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\SEOTools;
 
-class Page extends Model implements TranslatableContract
+class Page extends Model
 {
-    use Translatable, LogsActivity, Activated, Featured;
+    use LogsActivity,
+        Activated,
+        Featured,
+        Sluggable;
 
     private $_blocks = null;
     private $_medias = null;
 
-    public $translatedAttributes  = [
-        'title', 'slug', 'body'
-    ];
-
     protected static $logAttributes = ['*'];
 
     protected $guarded = ['id'];
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 
     public function blocks()
     {

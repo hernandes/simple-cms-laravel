@@ -17,23 +17,10 @@ class CreatePagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('key', 100);
             $table->boolean('active')->default(true);
-            $table->timestamps();
-        });
-
-        Schema::create('page_translations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('page_id');
             $table->string('title', 200);
-            $table->string('slug', 150);
+            $table->string('slug', 150)->unique();
             $table->longText('body')->nullable();
-            $table->string('locale', 20)->index();
             $table->timestamps();
-
-            $table->unique(['slug', 'locale']);
-            $table->unique(['page_id', 'locale']);
-            $table->foreign('page_id')
-                ->references('id')->on('pages')
-                ->onDelete('cascade');
         });
     }
 
@@ -44,7 +31,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('page_translations');
         Schema::dropIfExists('pages');
     }
 }

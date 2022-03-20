@@ -104,7 +104,6 @@ $(function () {
     if ($carrousel.length > 0) {
         $carrousel.each(function() {
             var $this = $(this);
-
             var items = $this.data('items') === undefined ? 3 : $this.data('items');
             var dots = $this.data('dots') === undefined ? false : $this.data('dots');
             var nav = $this.data('nav')=== undefined ? false : $this.data('nav');
@@ -118,7 +117,7 @@ $(function () {
                 autoplayTimeout: duration,
                 loop: loop,
                 items: items,
-                margin: 40,
+                margin: 30,
                 dots: dots,
                 nav: nav,
                 navText: [
@@ -127,29 +126,29 @@ $(function () {
                 ],
                 responsive: {
                     0: {
-                        items: 1,
+                        items: items - 2,
                         center: false
                     },
                     480: {
-                        items: 1,
+                        items: items - 2,
                         center: false
                     },
                     600: {
-                        items: 1,
+                        items: items - 2,
                         center: false
                     },
                     750: {
-                        items: 2,
+                        items: items - 1,
                         center: false
                     },
                     960: {
-                        items: 2
+                        items: items - 1
                     },
                     1170: {
-                        items: 3
+                        items: items
                     },
                     1300: {
-                        items: 3
+                        items: items
                     }
                 }
             });

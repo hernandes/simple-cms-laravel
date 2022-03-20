@@ -8,7 +8,7 @@ class PagesController extends Controller
 
     public function show($slug = null)
     {
-        $page = Page::whereTranslation('slug', $slug)->firstOrFail();
+        $page = Page::where('slug', $slug)->firstOrFail();
         $page->configSeo();
 
         $blocks = $page->block('block_*');

@@ -17,21 +17,9 @@ class CreatePostCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->boolean('active')->default(true);
             $table->integer('sequence');
-            $table->timestamps();
-        });
-
-        Schema::create('post_category_translations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('post_category_id');
             $table->string('name');
             $table->string('slug', 150)->unique();
-            $table->string('locale', 20)->index();
             $table->timestamps();
-
-            $table->unique(['post_category_id', 'locale']);
-            $table->foreign('post_category_id')
-                ->references('id')->on('post_categories')
-                ->onDelete('cascade');
         });
 
         Schema::create('post_post_category', function (Blueprint $table) {
@@ -57,7 +45,6 @@ class CreatePostCategoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('post_post_category');
-        Schema::dropIfExists('post_category_translations');
         Schema::dropIfExists('post_categories');
     }
 }

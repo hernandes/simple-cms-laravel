@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 .required {
   color: red;
 }
@@ -16,8 +15,7 @@
   padding: 0.5rem;
 }
 
-.table td,
-.table th {
+.table td, .table th {
   vertical-align: middle;
 }
 
@@ -62,11 +60,8 @@
 }
 
 .custom-control {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 tr.bg-inactive td {
@@ -98,7 +93,6 @@ tr.bg-inactive td {
 .multiple-checkbox .checkbox {
   margin-bottom: 10px;
 }
-
 .multiple-checkbox .checkbox label {
   font-weight: normal;
 }
@@ -108,17 +102,14 @@ tr.bg-inactive td {
 }
 
 @media (max-width: 576px) {
-  .pl-2,
-  .px-2 {
+  .pl-2, .px-2 {
     padding-left: 0 !important;
   }
 
-  .pr-2,
-  .px-2 {
+  .pr-2, .px-2 {
     padding-right: 0 !important;
   }
 }
-
 .dd {
   position: relative;
   display: block;
@@ -251,7 +242,6 @@ tr.bg-inactive td {
 /**
  * Nestable Extras
  */
-
 .nestable-lists {
   display: block;
   clear: both;
@@ -292,7 +282,6 @@ tr.bg-inactive td {
 /**
  * Nestable Draggable Handles
  */
-
 .dd3-content {
   display: block;
   margin: 5px 0;
@@ -333,7 +322,7 @@ tr.bg-inactive td {
 }
 
 .dd3-handle:before {
-  content: "\2261";
+  content: "≡";
   display: block;
   position: absolute;
   left: 0;
@@ -349,7 +338,6 @@ tr.bg-inactive td {
 /**
  * Socialite
  */
-
 .socialite {
   display: block;
   float: left;
@@ -360,16 +348,12 @@ tr.bg-inactive td {
   background: #fafafa;
   border: 1px dashed #ccc;
   position: relative;
-  display: -webkit-box;
   display: flex;
   padding: 5px;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 4px;
 }
-
 .image-upload.is-invalid {
   padding-right: 0 !important;
   background: none !important;
@@ -389,14 +373,10 @@ tr.bg-inactive td {
   height: 100%;
   position: relative;
   cursor: pointer;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .image-icon i {
   font-size: 20px;
 }
@@ -404,14 +384,10 @@ tr.bg-inactive td {
 .preview .image {
   width: 100%;
   height: 100%;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .preview .image img {
   max-width: 100%;
 }
@@ -422,12 +398,9 @@ tr.bg-inactive td {
   height: 100%;
   width: 100%;
   z-index: 8;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-close {
@@ -500,28 +473,21 @@ tr.bg-inactive td {
 
 @-webkit-keyframes spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
-
 .bootstrap-datetimepicker-widget table.table td {
   border: 0;
 }
@@ -529,24 +495,19 @@ tr.bg-inactive td {
 .dt-bootstrap4 .dataTables_length {
   padding: 15px 0 0 15px;
 }
-
 .dt-bootstrap4 .dataTables_filter {
   padding: 15px 15px 0 15px;
 }
-
 .dt-bootstrap4 .dataTables_filter .form-control {
   width: 280px;
 }
-
 .dt-bootstrap4 .datatable {
   border-bottom: 1px solid #dee2e6;
   margin-bottom: 0 !important;
 }
-
 .dt-bootstrap4 .dataTables_info {
   padding: 10px 15px;
 }
-
 .dt-bootstrap4 .dataTables_paginate {
   padding: 10px;
 }
@@ -555,13 +516,11 @@ tr.bg-inactive td {
   width: 100% !important;
 }
 
-table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child,
-table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child {
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child, table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child {
   padding-left: 30px !important;
 }
 
-table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
-table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
   line-height: 13px;
 }
 
@@ -573,7 +532,6 @@ table.dataTable > tbody > tr.child ul {
   margin-right: 2px;
 }
 
-.ck-editor__editable {
+.ck-content {
   min-height: 300px;
 }
-

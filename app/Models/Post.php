@@ -5,23 +5,33 @@ use App\Support\Activated;
 use App\Support\FileUpload;
 use Carbon\Carbon;
 use Conner\Tagging\Taggable;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Activitylog\Traits\LogsActivity;
-use Astrotomic\Translatable\Translatable;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
-class Post extends Model implements TranslatableContract
+class Post extends Model
 {
-    use Translatable, LogsActivity, Activated, FileUpload, Taggable;
-
-    public $translatedAttributes = [
-        'title', 'slug', 'summary', 'body'
-    ];
+    use LogsActivity,
+        Activated,
+        FileUpload,
+        Taggable,
+        Sluggable,
+        HasFactory;
 
     protected static $logAttributes = ['*'];
 
     protected $guarded = [
         'id'
     ];
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 
     protected $appends = ['image_url'];
 

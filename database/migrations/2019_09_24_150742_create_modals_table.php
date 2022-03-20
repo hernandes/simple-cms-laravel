@@ -19,21 +19,9 @@ class CreateModalsTable extends Migration
             $table->boolean('active')->default(true);
             $table->boolean('only_home')->default(false);
             $table->string('url')->nullable();
-            $table->timestamps();
-        });
-
-        Schema::create('modal_translations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('modal_id');
             $table->string('title')->nullable();
             $table->text('body')->nullable();
-            $table->string('locale', 20)->index();
             $table->timestamps();
-
-            $table->unique(['modal_id', 'locale']);
-            $table->foreign('modal_id')
-                ->references('id')->on('modals')
-                ->onDelete('cascade');
         });
     }
 
@@ -44,7 +32,6 @@ class CreateModalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modal_translations');
         Schema::dropIfExists('modals');
     }
 }

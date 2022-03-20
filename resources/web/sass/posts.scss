@@ -1,0 +1,21 @@
+.posts-container {
+    padding: 2rem 0;
+}
+
+.post {
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+
+    &__title {
+        margin: .4rem 0;
+        font-weight: bold;
+    }
+
+    &__image img {
+        border-radius: 5px 5px 0 0
+    }
+
+    &__container {
+        padding: 10px;
+    }
+}

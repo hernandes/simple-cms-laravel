@@ -22,24 +22,12 @@ class CreateMediasTable extends Migration
             $table->string('model_type', 150);
             $table->unsignedBigInteger('model_id');
             $table->string('file');
-            $table->timestamps();
-
-            $table->index(['model_type', 'model_id']);
-        });
-
-        Schema::create('media_translations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('media_id');
             $table->string('title')->nullable();
             $table->string('alt')->nullable();
             $table->text('description')->nullable();
-            $table->string('locale', 20)->index();
             $table->timestamps();
 
-            $table->unique(['media_id', 'locale']);
-            $table->foreign('media_id')
-                ->references('id')->on('medias')
-                ->onDelete('cascade');
+            $table->index(['model_type', 'model_id']);
         });
     }
 
@@ -50,7 +38,6 @@ class CreateMediasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media_translations');
         Schema::dropIfExists('medias');
     }
 }

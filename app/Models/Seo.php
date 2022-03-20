@@ -2,18 +2,12 @@
 namespace App\Models;
 
 use Spatie\Activitylog\Traits\LogsActivity;
-use Astrotomic\Translatable\Translatable;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
-class Seo extends Model implements TranslatableContract
+class Seo extends Model
 {
-    use Translatable, LogsActivity;
+    use LogsActivity;
 
     protected $table = 'seo';
-
-    public $translatedAttributes = [
-        'title', 'description', 'keywords'
-    ];
 
     protected static $logAttributes = ['*'];
 
